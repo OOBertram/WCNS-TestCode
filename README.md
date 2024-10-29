@@ -4,7 +4,9 @@
 本代码开源了一套一维和二维的WCNS格式分辨率测试代码
 
 This code includes a test suite for the 1D & 2D Weighted Compact Nonlinear Scheme (WCNS), which allows testing the accuracy and resolution of the 5th-order WCNS. Please cite the following articles when using this code:
+
 1.Liu, X., Zhen, M., Cai, J., & Liao, F. High-order Weighted Compact Nonlinear Scheme with Advanced Shock Detection: The Integration of Front Tracking and Smoothness Decomposition.
+
 2.Liu, X., Min, Y., Cai, J., Ma, Y., & Yan, Z.-G. A Filtered Embedded Weighted Compact Nonlinear Scheme for Hyperbolic Conservation Law.
 
  **Efficiency-Double Mach Refelection** 
@@ -49,8 +51,8 @@ This code includes a test suite for the 1D & 2D Weighted Compact Nonlinear Schem
 
 ## Usage
 
-gfortran *.f90 -o a.out
+gfortran *.f90 -o a.out -freal-4-real-8 -fno-align-commons
 
 ## Issues and Support
 
-If you have any questions or encounter any bugs in the program, please contact us at: bertram0507@163.com.
+If you have any questions or encounter any bugs in the program, please contact us at: bertram0507@163.com or bertram0298@gmail.com.
