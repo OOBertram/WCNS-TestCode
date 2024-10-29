@@ -45,7 +45,7 @@ This code includes a test suite for the 5th-order Weighted Compact Nonlinear Sch
  **CPU_INFO** 
 
     Intel(R) Core(TM) i7-14700KF
-    CPU benchmark speed:	3.40 GHz
+    CPU benchmark speed: 3.40 GHz
 
 ## Usage
 
