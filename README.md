@@ -3,7 +3,7 @@
 
 This code includes a test suite for the 5th-order Weighted Compact Nonlinear Scheme (WCNS), which allows testing the accuracy and resolution of the 5th-order WCNS. Please cite the following articles when using this code:
 
-1.Liu, X., Zhen, M., Cai, J., & Liao, F. High-order Weighted Compact Nonlinear Scheme with Advanced Shock Detection: The Integration of Front Tracking and Smoothness Decomposition.
+1.Liu, X., Zhen, M., Cai, J., & Liao, F. High-Order Weighted Compact Nonlinear Scheme with Advanced Shock Detection: The Integration of Front Tracking and Smoothness Decomposition.
 
 2.Liu, X., Min, Y., Cai, J., Ma, Y., & Yan, Z.-G. A Filtered Embedded Weighted Compact Nonlinear Scheme for Hyperbolic Conservation Law.
 
