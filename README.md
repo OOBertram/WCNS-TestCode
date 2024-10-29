@@ -1,9 +1,9 @@
 # WCNS-TestCode
 ## Introduction
 
-本代码开源了一套一维和二维的WCNS格式分辨率测试代码
+本代码开源了5阶WCNS格式分辨率测试代码
 
-This code includes a test suite for the 1D & 2D Weighted Compact Nonlinear Scheme (WCNS), which allows testing the accuracy and resolution of the 5th-order WCNS. Please cite the following articles when using this code:
+This code includes a test suite for the 5th-order Weighted Compact Nonlinear Scheme (WCNS), which allows testing the accuracy and resolution of the 5th-order WCNS. Please cite the following articles when using this code:
 
 1.Liu, X., Zhen, M., Cai, J., & Liao, F. High-order Weighted Compact Nonlinear Scheme with Advanced Shock Detection: The Integration of Front Tracking and Smoothness Decomposition.
 
