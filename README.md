@@ -3,9 +3,9 @@
 
 This code includes a test suite for the 5th-order Weighted Compact Nonlinear Scheme (WCNS), which allows testing the accuracy and resolution of the 5th-order WCNS. Please cite the following articles when using this code:
 
-1.Liu, X., Zhen, M., Cai, J., & Liao, F. High-Order Weighted Compact Nonlinear Scheme with Advanced Shock Detection: The Integration of Front Tracking and Smoothness Decomposition.
+1.Liu, X., Zhen, M., Cai, J., & Liao, F. High-Order Weighted Compact Nonlinear Scheme with Front Tracking and Smoothness Decomposition.
 
-2.Liu, X., Min, Y., Cai, J., Ma, Y., & Yan, Z.-G. A Filtered Embedded Weighted Compact Nonlinear Scheme for Hyperbolic Conservation Law.
+2.Liu, X., Min, Y., Cai, J., Ma, Y. and Yan, Z.-G. (2025), A Filtered Embedded Weighted Compact Non-Linear Scheme for Hyperbolic Conservation Law. Int J Numer Meth Fluids. https://doi.org/10.1002/fld.5366
 
  **Efficiency-Double Mach Refelection** 
 | Case | Scheme    | CFL | Grid         | Time Use(s) | Time Ratio(%) | Shock Detect Time(s) | Detect Time Ratio (DTR)(%) | DTR-TOT |
