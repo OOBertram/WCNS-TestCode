@@ -66,7 +66,7 @@ end function
 
 
 
-real function armm(u,ex,ey,ez)	!ex,ey,ez������������ֵ
+real function armm(u,ex,ey,ez)
 use input
 real u(5)
 ! write(*,*) ex,ey,ez
