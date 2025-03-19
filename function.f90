@@ -20,7 +20,7 @@ u(5)=pin/(gin-1)+0.5*u(2)**2/qin
 uo=u(k)
 end function
 
-subroutine flux(f,u,ex,ey,ez)	      !ex,ey,ez�����ͨ��
+subroutine flux(f,u,ex,ey,ez)	    
 implicit none
 real ex,ey,ez
 real f(5),u(5),ps
@@ -34,7 +34,7 @@ f(5)=f(1)*(u(5)+ps)/u(1)
 end subroutine
 
 
-real function H(u)	 !��
+real function H(u)	 
 implicit none
 real u(5)
 real,external::p
