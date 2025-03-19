@@ -25,9 +25,9 @@ wb=-refuze*wb
 wa=rough*wa						              
 wc=rough*wc
 ajac=(ax*by-ay*bx)*cz+(az*bx-ax*bz)*cy+(ay*bz-az*by)*cx
-w(2)=((by*cz-bz*cy)*wa+(cy*az-cz*ay)*wb+(ay*bz-az*by)*wc)/ajac	   !!qu
-w(3)=((bz*cx-bx*cz)*wa+(cz*ax-cx*az)*wb+(az*bx-ax*bz)*wc)/ajac	   !!qv
-w(4)=((bx*cy-by*cx)*wa+(cx*ay-cy*ax)*wb+(ax*by-ay*bx)*wc)/ajac	   !!qw
+w(2)=((by*cz-bz*cy)*wa+(cy*az-cz*ay)*wb+(ay*bz-az*by)*wc)/ajac	   
+w(3)=((bz*cx-bx*cz)*wa+(cz*ax-cx*az)*wb+(az*bx-ax*bz)*wc)/ajac	  
+w(4)=((bx*cy-by*cx)*wa+(cx*ay-cy*ax)*wb+(ax*by-ay*bx)*wc)/ajac	  
 w(5)=pw/(gin-1.)+0.5*(w(2)**2+w(3)**2+w(4)**2)/w(1)
 endsubroutine
 
@@ -140,14 +140,14 @@ subroutine boundk_ileft_DM(ukm)
 use common1;use ghost
 real ukm(1-mo:i1+mo,1-mo:j1+mo,1-mo:k1+mo,5)
 do k=1,k1 ; do j=1,j1 ; do i=1-mo,0
-  call  conserve(ukm(i,j,k,:),8.0,7.14471,-4.125,0.,116.5)        !i����߽�
+  call  conserve(ukm(i,j,k,:),8.0,7.14471,-4.125,0.,116.5)       
 enddo; enddo; enddo 
 endsubroutine
 
 subroutine boundk_iright_DM(ukm)   
 use common1;use ghost
 real ukm(1-mo:i1+mo,1-mo:j1+mo,1-mo:k1+mo,5)  
-  call bound_out1_i_right(ukm,i1,j1,k1) !i����߽�
+  call bound_out1_i_right(ukm,i1,j1,k1) 
 endsubroutine
 
 subroutine boundk_jleft_DM(ukm)                  
@@ -163,7 +163,7 @@ subroutine boundk_jright_DM(ukm)
 use common1;use ghost;use input
 real ukm(1-mo:i1+mo,1-mo:j1+mo,1-mo:k1+mo,5)
 ss=10.
-do k=1,k1; do j=j1+1,j1+mo ; do i=1,i1 !j����߽�
+do k=1,k1; do j=j1+1,j1+mo ; do i=1,i1 
 if(x1(i,j1,k1)<=(1./6. + sqrt(3.)/3*(1.+2.*ss*timenow(2))))  then  
   call conserve(ukm(i,j,k,:),8.0,7.14471 ,-4.125 ,0. ,116.5 )
 else
@@ -193,7 +193,7 @@ endsubroutine
 subroutine boundk_iright_Riemann(ukm) 
 use common1;use ghost
 real ukm(1-mo:i1+mo,1-mo:j1+mo,1-mo:k1+mo,5)
-call bound_out1_i_right(ukm,i1,j1,k1) !i����߽�
+call bound_out1_i_right(ukm,i1,j1,k1) 
 endsubroutine
  
 subroutine boundk_jleft_Riemann(ukm)                  
@@ -206,33 +206,33 @@ endsubroutine
 subroutine boundk_jright_Riemann(ukm)
 use common1;use ghost
 real ukm(1-mo:i1+mo,1-mo:j1+mo,1-mo:k1+mo,5)
-call bound_out1_j_right(ukm,i1,j1,k1) !j����߽�
+call bound_out1_j_right(ukm,i1,j1,k1) 
 endsubroutine
 
 subroutine boundk_kleft_Riemann(ukm)
 use common1;use ghost
 real ukm(1-mo:i1+mo,1-mo:j1+mo,1-mo:k1+mo,5)
-call bound_1_period_k_left(ukm,i1,j1,k1)   !k����������                    
+call bound_1_period_k_left(ukm,i1,j1,k1)                     
 endsubroutine
 
 subroutine boundk_kright_Riemann(ukm)
 use common1;use ghost
 real ukm(1-mo:i1+mo,1-mo:j1+mo,1-mo:k1+mo,5)
-call bound_1_period_k_right(ukm,i1,j1,k1)  !k����������                    
+call bound_1_period_k_right(ukm,i1,j1,k1)                   
 endsubroutine
 
-subroutine boundk_ileft_2DRT(ukm)     !i������߽�,��������
+subroutine boundk_ileft_2DRT(ukm)   
 use common1;use ghost
 real ukm(1-mo:i1+mo,1-mo:j1+mo,1-mo:k1+mo,5)
 call bound_wall_i_left(ukm,ax1,ay1,az1,bx1,by1,bz1,cx1,cy1,cz1,    &
-                                i1,j1,k1,1,j1,1,k1)   !i����������
+                                i1,j1,k1,1,j1,1,k1)   
 endsubroutine
 
-subroutine boundk_iright_2DRT(ukm)    !i�����ұ߽�,��������
+subroutine boundk_iright_2DRT(ukm)   
 use common1;use ghost
 real ukm(1-mo:i1+mo,1-mo:j1+mo,1-mo:k1+mo,5)
 call bound_wall_i_right(ukm,ax1,ay1,az1,bx1,by1,bz1,cx1,cy1,cz1,    &
-                                i1,j1,k1,1,j1,1,k1) !i����������
+                                i1,j1,k1,1,j1,1,k1) 
 endsubroutine
 
 subroutine boundk_jleft_2DRT(ukm)                  
@@ -254,25 +254,25 @@ endsubroutine
 subroutine boundk_kleft_2DRT(ukm)
 use common1;use ghost
 real ukm(1-mo:i1+mo,1-mo:j1+mo,1-mo:k1+mo,5)
-call bound_1_period_k_left(ukm,i1,j1,k1)   !k����������                    
+call bound_1_period_k_left(ukm,i1,j1,k1)                    
 endsubroutine
 
 subroutine boundk_kright_2DRT(ukm)
 use common1;use ghost
 real ukm(1-mo:i1+mo,1-mo:j1+mo,1-mo:k1+mo,5)
-call bound_1_period_k_right(ukm,i1,j1,k1)  !k����������                    
+call bound_1_period_k_right(ukm,i1,j1,k1)                 
 endsubroutine
 
-subroutine boundk_ileft_Richmyer(ukm)     !i������߽�,��������
+subroutine boundk_ileft_Richmyer(ukm)     
 use common1;use ghost
 real ukm(1-mo:i1+mo,1-mo:j1+mo,1-mo:k1+mo,5)
-call bound_out1_i_left(ukm,i1,j1,k1) !i����߽�
+call bound_out1_i_left(ukm,i1,j1,k1) 
 endsubroutine
  
-subroutine boundk_iright_Richmyer(ukm)    !i�����ұ߽�,��������
+subroutine boundk_iright_Richmyer(ukm)    
 use common1;use ghost
 real ukm(1-mo:i1+mo,1-mo:j1+mo,1-mo:k1+mo,5)
-call bound_out1_i_right(ukm,i1,j1,k1) !i����߽�
+call bound_out1_i_right(ukm,i1,j1,k1)
 endsubroutine
  
 
@@ -287,31 +287,31 @@ endsubroutine
 subroutine boundk_jright_Richmyer(ukm)
 use common1;use ghost
 real ukm(1-mo:i1+mo,1-mo:j1+mo,1-mo:k1+mo,5)
-call bound_out1_j_right(ukm,i1,j1,k1) !j����߽�
+call bound_out1_j_right(ukm,i1,j1,k1)
 endsubroutine
 
 subroutine boundk_kleft_Richmyer(ukm)
 use common1;use ghost
 real ukm(1-mo:i1+mo,1-mo:j1+mo,1-mo:k1+mo,5)
-call bound_1_period_k_left(ukm,i1,j1,k1)   !k����������                    
+call bound_1_period_k_left(ukm,i1,j1,k1)                     
 endsubroutine
 
 subroutine boundk_kright_Richmyer(ukm)
 use common1;use ghost
 real ukm(1-mo:i1+mo,1-mo:j1+mo,1-mo:k1+mo,5)
-call bound_1_period_k_right(ukm,i1,j1,k1)  !k����������                    
+call bound_1_period_k_right(ukm,i1,j1,k1)                   
 endsubroutine
 
-subroutine boundk_ileft_ShockVortex(ukm)     !i������߽�,��������
+subroutine boundk_ileft_ShockVortex(ukm)    
 use common1;use ghost
 real ukm(1-mo:i1+mo,1-mo:j1+mo,1-mo:k1+mo,5)
-call bound_out1_i_left(ukm,i1,j1,k1) !i����߽�
+call bound_out1_i_left(ukm,i1,j1,k1) 
 endsubroutine
  
-subroutine boundk_iright_ShockVortex(ukm)    !i�����ұ߽�,��������
+subroutine boundk_iright_ShockVortex(ukm)    
 use common1;use ghost
 real ukm(1-mo:i1+mo,1-mo:j1+mo,1-mo:k1+mo,5)
-call bound_out1_i_right(ukm,i1,j1,k1) !i����߽�
+call bound_out1_i_right(ukm,i1,j1,k1)
 endsubroutine
  
 subroutine boundk_jleft_ShockVortex(ukm)                  
@@ -324,19 +324,19 @@ endsubroutine
 subroutine boundk_jright_ShockVortex(ukm)
 use common1;use ghost
 real ukm(1-mo:i1+mo,1-mo:j1+mo,1-mo:k1+mo,5)
-call bound_out1_j_right(ukm,i1,j1,k1) !j����߽�
+call bound_out1_j_right(ukm,i1,j1,k1)
 endsubroutine
 
 subroutine boundk_kleft_ShockVortex(ukm)
 use common1;use ghost
 real ukm(1-mo:i1+mo,1-mo:j1+mo,1-mo:k1+mo,5)
-call bound_1_period_k_left(ukm,i1,j1,k1)   !k����������                    
+call bound_1_period_k_left(ukm,i1,j1,k1)                     
 endsubroutine
 
 subroutine boundk_kright_ShockVortex(ukm)
 use common1;use ghost
 real ukm(1-mo:i1+mo,1-mo:j1+mo,1-mo:k1+mo,5)
-call bound_1_period_k_right(ukm,i1,j1,k1)  !k����������                    
+call bound_1_period_k_right(ukm,i1,j1,k1)                    
 endsubroutine
 
   subroutine bound_out1_i_left(u,im,jm,km)  
@@ -359,7 +359,7 @@ endsubroutine
   enddo;enddo;enddo
   endsubroutine
   
-  subroutine  bound_out1_j_left(u,im,jm,km)   ! j��������
+  subroutine  bound_out1_j_left(u,im,jm,km)   
   use ghost
   real u(1-mo:im+mo,1-mo:jm+mo,1-mo:km+mo,5)
   do k=1,km;do i=1,im;do j=0,mo-1
@@ -370,7 +370,7 @@ endsubroutine
   enddo;enddo;enddo
   endsubroutine
   
-  subroutine  bound_out1_j_right(u,im,jm,km)   ! j�ҷ�������
+  subroutine  bound_out1_j_right(u,im,jm,km)  
   use ghost
   real u(1-mo:im+mo,1-mo:jm+mo,1-mo:km+mo,5)
   do k=1,km;do i=1,im;do j=1,mo
@@ -382,7 +382,7 @@ endsubroutine
   endsubroutine
 
 subroutine bound_wall_i_left(u,ax,ay,az,bx,by,bz,cx,cy,cz,     &
-                            	im,jm,km,jl,jr,kl,kr)  !i����������
+                            	im,jm,km,jl,jr,kl,kr) 
 use ghost
 real u(1-mo:im+mo,1-mo:jm+mo,1-mo:km+mo,5)
 real  ax(im,jm,km),ay(im,jm,km),az(im,jm,km)
@@ -398,19 +398,19 @@ do i=1-mo,0
 do l=1,5
  ww(l)=u(1-i,j,k,l)
 enddo
-call jacobi(xa,ya,za,xb,yb,zb,xc,yc,zc,		  &       !!����������ϵ�i��x��ƫ�����x��i��ƫ��
+call jacobi(xa,ya,za,xb,yb,zb,xc,yc,zc,		  &      
             axs,ays,azs,bxs,bys,bzs,cxs,cys,czs)
 call outerproduct(xa,ya,za,xb,yb,zb,xc,yc,zc)
-call mirr(ww,xb,yb,zb,xa,ya,za,xc,yc,zc)	!����ֱ
-! call mirr(ww,bxs,bys,bzs,axs,ays,azs,cxs,cys,czs)	!��ֱ
+call mirr(ww,xb,yb,zb,xa,ya,za,xc,yc,zc)	
+! call mirr(ww,bxs,bys,bzs,axs,ays,azs,cxs,cys,czs)	
 do l=1,5			
-u(i,j,k,l)=ww(l)	    !!���ú���Ҫ��(i=-1,i=0�Ĵ���ֵ)
+u(i,j,k,l)=ww(l)	  
 enddo
 enddo;enddo;enddo
 endsubroutine
 
 subroutine bound_wall_i_right(u,ax,ay,az,bx,by,bz,cx,cy,cz,    &
-                                im,jm,km,jl,jr,kl,kr) !i����������
+                                im,jm,km,jl,jr,kl,kr)
 
 use ghost
 real u(1-mo:im+mo,1-mo:jm+mo,1-mo:km+mo,5)
@@ -430,8 +430,8 @@ enddo
 call jacobi(xa,ya,za,xb,yb,zb,xc,yc,zc,   &
              axs,ays,azs,bxs,bys,bzs,cxs,cys,czs)
 call outerproduct(xa,ya,za,xb,yb,zb,xc,yc,zc)
-call mirr(ww,xb,yb,zb,xa,ya,za,xc,yc,zc)	!����ֱ
-!	call mirr(ww,bxs,bys,bzs,axs,ays,azs,cxs,cys,czs)	!��ֱ
+call mirr(ww,xb,yb,zb,xa,ya,za,xc,yc,zc)	
+!	call mirr(ww,bxs,bys,bzs,axs,ays,azs,cxs,cys,czs)	
 do l=1,5			
 u(i,j,k,l)=ww(l)
 enddo
@@ -439,7 +439,7 @@ enddo;enddo;enddo
 endsubroutine
 
 subroutine bound_wall_j_left(u,ax,ay,az,bx,by,bz,cx,cy,cz,    &
-                           	im,jm,km,il,ir,kl,kr) !j����������
+                           	im,jm,km,il,ir,kl,kr)
 use ghost
 real u(1-mo:im+mo,1-mo:jm+mo,1-mo:km+mo,5)
 real  ax(im,jm,km),ay(im,jm,km),az(im,jm,km)
@@ -458,15 +458,15 @@ enddo
 call jacobi(xa,ya,za,xb,yb,zb,xc,yc,zc,    &
             axs,ays,azs,bxs,bys,bzs,cxs,cys,czs)
 call outerproduct(xb,yb,zb,xa,ya,za,xc,yc,zc)
-call mirr(ww,xa,ya,za,xb,yb,zb,xc,yc,zc)	!����ֱ
-!	call mirr(ww,axs,ays,azs,bxs,bys,bzs,cxs,cys,czs)	!��ֱ
+call mirr(ww,xa,ya,za,xb,yb,zb,xc,yc,zc)	
+!	call mirr(ww,axs,ays,azs,bxs,bys,bzs,cxs,cys,czs)	
 do l=1,5			
  u(i,j,k,l)=ww(l)
 enddo
 enddo;enddo;enddo
 endsubroutine
 
-subroutine bound_1_period_k_left(u,im,jm,km)	!k��һ�ܻ�����������
+subroutine bound_1_period_k_left(u,im,jm,km)	
 use ghost
 real u(1-mo:im+mo,1-mo:jm+mo,1-mo:km+mo,5)
 do i=1,im
@@ -478,7 +478,7 @@ enddo
 enddo;enddo;enddo
 endsubroutine
 
-subroutine bound_1_period_k_right(u,im,jm,km) !k��һ�ܻ�������
+subroutine bound_1_period_k_right(u,im,jm,km)
 use ghost
 real u(1-mo:im+mo,1-mo:jm+mo,1-mo:km+mo,5)
 do i=1,im
