@@ -3,7 +3,7 @@
 
 This code includes a test suite for the 5th-order Weighted Compact Nonlinear Scheme (WCNS), which allows testing the accuracy and resolution of the 5th-order WCNS. Please cite the following articles when using this code:
 
-1.Liu, X., Zhen, M., Cai, J., & Liao, F. (2025), A Fast Hybrid Weighted Compact Nonlinear Scheme with Enhanced Smoothness Indicator. Physics of Fluids. https://doi.org/10.1063/5.0259781
+1.Xuan Liu, Meiyuan Zhen, Jinsheng Cai, Fei Liao; A fast hybrid weighted compact nonlinear scheme with enhanced smoothness indicator. Physics of Fluids 1 March 2025; 37 (3): 036148. https://doi.org/10.1063/5.0259781
 
 2.Liu, X., Min, Y., Cai, J., Ma, Y. and Yan, Z.-G. (2025), A Filtered Embedded Weighted Compact Non-Linear Scheme for Hyperbolic Conservation Law. Int J Numer Meth Fluids. https://doi.org/10.1002/fld.5366
 
